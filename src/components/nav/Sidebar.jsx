@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+// import { Link } from "react-router-dom";
 // Assets
 import CloseIcon from "../../assets/svg/Icons/CloseIcon";
-// import LogoIcon from "../../assets/svg/Logo";
+import LogoIconWhite from "../../assets/svg/Logos/logoWhite.svg";
 
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
   return (
-    <Wrapper className="animate darkBg" sidebarOpen={sidebarOpen}>
+    <Wrapper className="animate bg-purple " sidebarOpen={sidebarOpen}>
       <SidebarHeader className="flexSpaceCenter">
         <div className="flexNullCenter">
-          {/* <LogoIcon /> */}
-          <h1 className="whiteColor font20" style={{ marginLeft: "15px" }}>
-            fanatic
-          </h1>
+          <img src={LogoIconWhite} alt=""/>
         </div>
         <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className="animate pointer">
           <CloseIcon />
@@ -22,52 +19,53 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
 
       <UlStyle className="flexNullCenter flexColumn">
         <li className="semiBold font15 pointer">
+          <a href="/" className="cl-white " style={{ padding: "10px 15px" }}>         
+            HOME
+          </a>
+        </li>
+        <li className="semiBold font15 pointer">
+          <a href="/" className="cl-white " style={{ padding: "10px 15px" }}>         
+            ABOUT
+          </a>
+        </li>
+        <li className="semiBold font15 pointer">
+          <a href="/" className="cl-white " style={{ padding: "10px 15px" }}>         
+            CONTACT
+          </a>
+        </li>
+        {/* <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
-            activeClass="active"
-            className="whiteColor"
+            // activeClass="active"
+            className="cl-white "
             style={{ padding: "10px 15px" }}
-            to="home"
+            to="aboutus"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Home
+            ABOUT US
           </Link>
         </li>
         <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
-            activeClass="active"
-            className="whiteColor"
+            // activeClass="active"
+            className="cl-white "
             style={{ padding: "10px 15px" }}
-            to="services"
+            to="contact"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Services
-          </Link>
-        </li>
-        <li className="semiBold font15 pointer">
+           CONTACT 
+          </Link> 
+        </li> */}
+        {/* <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
             activeClass="active"
-            className="whiteColor"
-            style={{ padding: "10px 15px" }}
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={-60}
-          >
-            Projects
-          </Link>
-        </li>
-        <li className="semiBold font15 pointer">
-          <Link
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            activeClass="active"
-            className="whiteColor"
+            className="cl-white "
             style={{ padding: "10px 15px" }}
             to="blog"
             spy={true}
@@ -81,7 +79,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
             activeClass="active"
-            className="whiteColor"
+            className="cl-white "
             style={{ padding: "10px 15px" }}
             to="pricing"
             spy={true}
@@ -95,7 +93,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
             activeClass="active"
-            className="whiteColor"
+            className="cl-white "
             style={{ padding: "10px 15px" }}
             to="contact"
             spy={true}
@@ -104,17 +102,17 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           >
             Contact
           </Link>
-        </li>
+        </li> */}
       </UlStyle>
       <UlStyle className="flexSpaceCenter">
         <li className="semiBold font15 pointer">
-          <a href="/" style={{ padding: "10px 30px 10px 0" }} className="whiteColor">
-            Log in
+          <a href="/" className="radius5 cl-purple bg-white "  style={{ padding:" 10px 20px" }} >
+            LOG IN
           </a>
         </li>
         <li className="semiBold font15 pointer flexCenter">
-          <a href="/" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
-            Get Started
+          <a href="/" className="radius5 cl-purple  bg-white " style={{ padding: "10px 15px" }}>
+            SIGN UP
           </a>
         </li>
       </UlStyle>

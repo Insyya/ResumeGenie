@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
-
 // Components
 import Sidebar from "../nav/Sidebar";
 import Backdrop from "../Elements/Backdrop";
 // Assets
-// import LogoIcon from "../../assets/svg/Logo";
+import LogoIconMulti from "../../assets/svg/Logos/LogoMulti.svg";
 import BurgerIcon from "../../assets/svg/Icons/BurgerIcon";
+// import { Link } from "react-router-dom";
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -25,56 +24,64 @@ export default function TopNavbar() {
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper className="flexCenter animate " style={y > 100 ? { height: "60px" } : { height: "80px" }}>
+      <Wrapper className="flexCenter animate " style={y > 100 ? { height: "60px" } : { height: "90px" }}>
         <NavInner className="container flexSpaceCenter">
-          <Link className="pointer flexNullCenter" to="home" smooth={true}>
-            {/* <LogoIcon /> */}
-            <h1 style={{ marginLeft: "15px" }} className=" whiteColor font30 semiBold">
-              ResumeGenie
+          <a className="pointer flexNullCenter" href="/" smooth={true}>
+            <img  src={LogoIconMulti} alt=""/>
+            <h1 style={{ marginLeft: "15px" }} className=" cl-purple font26  fontfamily-Pacifico">
+            Resume Genie
             </h1>
-          </Link>
+          </a>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapperRight className="flexNullCenter ">
-          <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="home" spy={true} smooth={true} offset={-80}>
-                Home
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="services" spy={true} smooth={true} offset={-80}>
-                Services
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="projects" spy={true} smooth={true} offset={-80}>
-                Projects
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
-                Blog
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="pricing" spy={true} smooth={true} offset={-80}>
-                Pricing
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
-                Contact
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <a href="/" className="radius6 whiteColor" style={{  padding: "8px 15px",border: "1px solid white"  }}>
-              Log in
+          <li className="semiBold font15 pointer cl-black">
+              <a style={{ padding: "10px 15px" }} href="/home" className="cl-black"
+              //  spy={true} smooth={true} offset={-80} activeClass="active"
+               >
+
+                
+                HOME
               </a>
             </li>
-            <li className="semiBold font15 pointer ">
-              <a href="/" className="radius6 lightBg" style={{ padding: "8px 15px" ,color:'#1E293B' }}>
-              Sign up
+            <li className="semiBold font15 pointer cl-black">
+              <a activeClass="active" style={{ padding: "10px 15px" }} href="/"  className="cl-black"
+              // spy={true} smooth={true} offset={-80}
+              >
+                ABOUT
+              </a>
+            </li>
+            <li className="semiBold font15 pointer cl-black">
+              <a activeClass="active" style={{ padding: "10px 15px" }} href="/" className="cl-black" 
+              // spy={true} smooth={true} offset={-80}
+              >
+                CONTACT
+              </a>
+            </li>
+            {/* <li className="semiBold font15 pointer">
+              <a activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
+                Blog
+              </a>
+            </li>
+            <li className="semiBold font15 pointer">
+              <a activeClass="active" style={{ padding: "10px 15px" }} to="pricing" spy={true} smooth={true} offset={-80}>
+                Pricing
+              </a>
+            </li>
+            <li className="semiBold font15 pointer">
+              <a activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
+                Contact
+              </a>
+            </li> */}
+            <li className="semiBold font15 pointer cl-white box-shadow">
+              <a href="/" className="radius5 bg-purple cl-white" style={{  padding: "10px 20px"  }}>
+              LOG IN 
+              </a>
+            </li>
+            <li className="semiBold font15 pointer  box-shadow  ">
+              <a href="/" className="radius5 bg-purple cl-white" style={{ padding: "10px 20px" }}>
+              SIGN UP
               </a>
             </li>
           </UlWrapperRight>
@@ -85,7 +92,6 @@ export default function TopNavbar() {
 }
 
 const Wrapper = styled.nav`
-  background-color: #1E293B;
   width: 100%;
   position: fixed;
   top: 0;

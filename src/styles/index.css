@@ -1,3 +1,18 @@
+/* Variables */
+:root {
+  --primary-color-purple: #6A4FEB;
+  --secondary-color-light-purple: #FBFAFF;
+  --color-blue: #13287E;
+  --color-light-blue: #93A7BE;
+  --color-red: #983C42;
+  --color-dark-red: #E84118;
+  --color-light-lavender: #F0EDFD;
+  --color-white: #ffffff;
+  --color-black: black;
+  --box-shadow :drop-shadow( 0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -43,19 +58,25 @@ a {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 50px #fff inset; /* Change the color to your own background color */
+  -webkit-box-shadow:0 0 0 50px #fff inset; 
   box-shadow: transparent;
   -webkit-text-fill-color: #fff;
 }
 body {
-  background: #fff;
-  color: #0B093B;
-  font-family: 'Khula', sans-serif;
+  background:  var( --secondary-color-light-purple);
+  font-family: 'Poppins';
+  font-style: normal;
   overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
 }
+.fontfamily-Pacifico{
+  font-family: 'Pacifico';
 
+}
+.fontfamily-Poppins{
+  font-family: 'Poppins';
+}
 .regular {
   font-weight: 400!important;
 }
@@ -65,69 +86,17 @@ body {
 .extraBold {
   font-weight: 800!important;
 }
-
-/* HELLPERS */
-.textCenter {
-  text-align: center
-}
-.animate {
-  transition: 0.3s ease;
-}
-.pointer {
-  cursor: pointer;
-}
-.relative {
-  position: relative;
-}
-.textCenter {
-  text-align: center;
-}
-.textLeft {
-  text-align: left;
-}
-.textRight {
-  text-align: right;
-}
-.x100 {
-  width: 100%;
-}
 .active {
-  border-bottom: 2px solid #7620FF;
-  color: #7620FF;
+  padding-bottom: 10px;
+  border-bottom: 2px solid  var(--primary-color-purple);
+  color:  var(--primary-color-purple);
 }
 .tag {
-  padding: 5px 10px;
+  padding: 5px 10px; /* 5px top and bootom || 10px left and right */
   margin: 10px 0;
 }
-.shadow {
-  box-shadow: 0 0 11px rgba(237, 232, 237, 0.5)  ; 
-  -webkit-box-shadow: 0 0 11px rgba(237, 232, 237, 0.5)  ; 
-  -moz-box-shadow: 0 0 11px rgba(237, 232, 237, 0.5)  ; 
-}
-/* FLEXBOX */
-.flex {
-  display: flex;
-}
-.flexSpaceCenter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.flexNullCenter {
-  display: flex;
-  align-items: center;
-}
-.flexColumn {
-  flex-direction: column;
-}
-.flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flexSpaceNull {
-  display: flex;
-  justify-content: space-between;
+.box-shadow {
+  filter: var(--nav-shadow);
 }
 
 /* FONT SIZES */
@@ -152,8 +121,9 @@ body {
 .font20 {
   font-size: 1.25rem;
 }
-.font25 {
-  font-size: 1.563rem;
+.font26 {
+  font-size: 26px;
+  line-height: 39px; 
 }
 .font30 {
   font-size: 1.875rem;
@@ -161,9 +131,9 @@ body {
 .font40 {
   font-size: 2.5rem;
 }
-.font60 {
-  font-size: 3.75rem;
-  line-height: 4.5rem;
+.font45 {
+  font-size: 45px;
+  line-height: 63px;
 }
 @media only screen and (max-width: 859px) {
   .font11 {
@@ -200,60 +170,141 @@ body {
     font-size: 2.8rem;
   }
 }
+
+
 /* BORDER RADIUS */
-.radius8 {
-  border-radius: 1rem;
+.radius16 {
+  border-radius: 16px;
 }
-.radius6 {
-  border-radius: 0.6rem;
+.radius9{
+  border-radius: 9px;
 }
-/* COLORS */
-.darkColor {
-  color: #0B093B;
+.radius5{
+  border-radius: 5px;
 }
-.purpleColor {
-  color: #7620FF;
+/* Text Color Classes */
+.cl-purple {
+  color: var(--primary-color-purple);
 }
-.orangeColor {
-  color: #F2B300;
+
+.cl-light-purple {
+  color: var(--secondary-color-light-purple);
 }
-.lightColor {
-  color: #F5F5F5;
+
+.cl-blue {
+  color: var(--color-blue);
 }
-.coralColor {
-  color: #C4FFFF;
+
+.cl-light-blue {
+  color: var(--color-light-blue);
 }
-.greenColor {
-  color: #49CB86;
+
+.cl-red {
+  color: var(--primary-color-red);
 }
-.greyColor {
-  color: #707070;
+
+.cl-dark-red {
+  color: var(--color-dark-red);
 }
-.whiteColor {
-  color: #fff;
+
+.cl-light-lavender {
+  color: var(--color-light-lavender);
 }
-/* BACKGROUNDS */
-.darkBg {
-  background-color: #0B093B;
+
+.cl-white {
+  color: var(--color-white);
 }
-.purpleBg {
-  background-color: #7620FF;
+
+.cl-black {
+  color: var(--color-black);
 }
-.orangeBg {
-  background-color: #F2B300;
+
+/* Background Color Classes */
+.bg-purple {
+  background-color: var(--primary-color-purple);
 }
-.lightBg {
-  background-color: #F5F5F5;
+
+.bg-light-purple {
+  background-color: var(--secondary-color-light-purple);
 }
-.coralBg {
-  background-color: #C4FFFF;
+
+.bg-blue {
+  background-color: var(--color-blue);
 }
-.greenBg {
-  background-color: #49CB86;
+
+.bg-light-blue {
+  background-color: var(--color-light-blue);
 }
-.greyBg {
-  background-color: #707070;
+
+.bg-red {
+  background-color: var(--primary-color-red);
 }
-.whiteBg {
-  background-color: #fff;
+
+.bg-dark-red {
+  background-color: var(--color-dark-red);
+}
+
+.bg-light-lavender {
+  background-color: var(--color-light-lavender);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+
+/* FLEXBOX */
+.flex {
+  display: flex;
+}
+.flexSpaceCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexNullCenter {
+  display: flex;
+  align-items: center;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexSpaceNull {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* HELLPERS */
+.textCenter {
+  text-align: center
+}
+.animate {
+  transition: 0.3s ease;
+}
+.pointer {
+  cursor: pointer;
+}
+.relative {
+  position: relative;
+}
+.textCenter {
+  text-align: center;
+}
+.textLeft {
+  text-align: left;
+}
+.textRight {
+  text-align: right;
+}
+.x100 {
+  width: 100%;
 }
